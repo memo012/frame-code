@@ -1,5 +1,7 @@
 package com.adminsys.mybatis.session;
 
+import com.adminsys.mybatis.executor.SimpleExecutor;
+
 /**
  * @Author: qiang
  * @Description:
@@ -16,6 +18,6 @@ public class DefaultSqlSessionFactory implements SqlSessionFactory {
 
     @Override
     public SqlSession openSession() {
-        return new DefaultSqlSession(configuration);
+        return new DefaultSqlSession(configuration, new SimpleExecutor());
     }
 }

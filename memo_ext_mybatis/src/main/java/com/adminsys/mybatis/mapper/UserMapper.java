@@ -1,5 +1,6 @@
 package com.adminsys.mybatis.mapper;
 
+import com.adminsys.mybatis.annotations.Select;
 import com.adminsys.mybatis.entity.UserEntity;
 
 /**
@@ -10,6 +11,7 @@ import com.adminsys.mybatis.entity.UserEntity;
 
 public interface UserMapper {
 
-    UserEntity selectUser();
+    @Select("select * from user where id = '?' ")
+    UserEntity selectUser(Integer userId);
 
 }

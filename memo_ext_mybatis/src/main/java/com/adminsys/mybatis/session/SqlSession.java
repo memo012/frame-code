@@ -1,5 +1,9 @@
 package com.adminsys.mybatis.session;
 
+import com.adminsys.mybatis.mapping.MappedStatement;
+
+import java.util.List;
+
 /**
  * @Author: qiang
  * @Description:
@@ -7,5 +11,11 @@ package com.adminsys.mybatis.session;
  **/
 
 public interface SqlSession {
+
     <T> T getMapper(Class<T> type);
+
+    <T> T selectOne(MappedStatement mappedStatement) throws Exception;
+
+    public <E> List<E> selectList(MappedStatement mappedStatement);
+
 }

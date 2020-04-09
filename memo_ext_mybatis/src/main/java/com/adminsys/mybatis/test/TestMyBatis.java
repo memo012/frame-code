@@ -19,7 +19,7 @@ public class TestMyBatis {
         // 生成UserMapper 代理类
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
         // 执行MapperProxy invoke
-        UserEntity userEntity = mapper.selectUser();
+        UserEntity userEntity = mapper.selectUser(1);
         System.out.println(userEntity.toString());
     }
 }
